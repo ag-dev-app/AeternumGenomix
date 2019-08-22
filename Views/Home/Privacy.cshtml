@@ -1,0 +1,19 @@
+﻿@model AeternumGenomix.Models.Request
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+    var fieldsColl = ViewData["fields"] as JsonFieldsCollector; 
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>File selectionnée : @ViewData["name"]</p>
+
+<p>
+    @foreach (var item in fieldsColl.fields.Keys.ToList())
+	{
+		 <input type="checkbox" />@item<br/>
+	}
+</p>
+
+<p>Use this page to detail your site's privacy policy.</p>
